@@ -3,7 +3,7 @@
         @media (min-width: $breakpoint-lg) {
             @content;
         }
-    }
+    } 
     @else {
         @error "'#{$size}' is not valid $size argument";
     }

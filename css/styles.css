@@ -458,11 +458,21 @@ template {
   width: 100%;
   position: relative;
   overflow: hidden;
-  border: 1px solid red;
+  height: 300px;
 }
 .image-container img {
-  height: 100%;
-  width: auto;
+  width: 100%;
+  height: auto;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.4 ease;
+}
+.image-container img.zoom {
+  transform: scale(1.1);
+  transform-origin: top left;
 }
 .image-container .caption-container {
   position: absolute;
@@ -498,8 +508,10 @@ template {
   border: none;
   border-bottom: 1px solid #AAA;
   z-index: 1000;
+  background: #333;
 }
 .search:focus {
+  outline: none;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 

@@ -2,10 +2,20 @@
     width: 100%;
     position: relative;
     overflow: hidden;
-    border: 1px solid red;
+    height: 300px;
     img {
-        height: 100%;
-        width: auto;
+        @include responsive();
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: 0.4 ease;
+
+        &.zoom {
+            transform: scale(1.1);
+            transform-origin: top left;
+        }
     }
 
     .caption-container {

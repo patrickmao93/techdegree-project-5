@@ -360,22 +360,25 @@ template {
 }
 
 .image-container {
+  cursor: pointer;
   width: 100%;
   position: relative;
   overflow: hidden;
   height: 300px;
+  display: block;
 }
 @media (min-width: 480px) {
   .image-container {
-    flex: 1 50%;
+    flex: 1 48%;
     height: auto;
+    margin: 10px 1%;
   }
 }
 @media (min-width: 1000px) {
   .image-container {
     flex: none;
     width: 23%;
-    margin: 20px 1%;
+    margin: 10px 1%;
     border-radius: 2px;
   }
 }
@@ -406,20 +409,14 @@ template {
 .image-container .caption-container h4 {
   position: absolute;
   left: 0px;
-  top: -40px;
+  top: -30px;
   margin: 0px;
-  font-size: 3em;
+  font-size: 2.5em;
   color: white;
   text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
   padding: 4px 20px;
   opacity: 0.9;
   font-family: "Italianno", cursive;
-}
-@media (min-width: 1000px) {
-  .image-container .caption-container h4 {
-    font-size: 2.5em;
-    top: -30px;
-  }
 }
 .image-container .caption-container p {
   color: #EEE;
@@ -442,7 +439,7 @@ template {
   padding: 10px;
   border: none;
   border-bottom: 1px solid #AAA;
-  z-index: 1000;
+  z-index: 1;
   background: #333;
   caret-color: #AAA;
   color: white;

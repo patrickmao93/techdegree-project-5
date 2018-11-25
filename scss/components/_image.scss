@@ -1,17 +1,20 @@
 .image-container {
+    cursor: pointer;
     width: 100%;
     position: relative;
     overflow: hidden;
     height: 300px;
+    display: block;
 
     @include media('md') {
-        flex: 1 50%;
+        flex: 1 48%;
         height: auto;
+        margin: 10px 1%;
     }
     @include media('lg') {
         flex: none;
         width: 23%;
-        margin: 20px 1%;
+        margin: 10px 1%;
         border-radius: 2px;
     }
 
@@ -43,18 +46,14 @@
         h4 {
             position: absolute;
             left: 0px;
-            top: -40px;
+            top: -30px;
             margin: 0px;
-            font-size: 3em;
+            font-size: 2.5em;
             color: white;
             text-shadow: 4px 4px 6px rgba($color: #000000, $alpha: 0.5);
             padding: 4px 20px;
             opacity: 0.9;
             font-family: $font-header;
-            @include media('lg') {
-                font-size: 2.5em;
-                top: -30px;
-            }
         }
 
         p {

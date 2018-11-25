@@ -32,37 +32,22 @@ $(document).ready(function() {
     //display all photos on page load
     displayAllPhotos();
 
-    //on search field input, cycle through image objects to find the image title/caption that contains the input string
-    // $('#search').on('keyup paste', function() {
-    //     //reset content area before displaying matching ones
-    //     resetContent();
-    //     //if nothing or only whitespace is in search bar
-    //     if ($.trim($(this).val()) === '') {
-    //         displayAllPhotos();
-    //     }
-    //     // otherwise, find and display the photos that have titles or captions that contain search entry
-    //     for (let i = 0; i < photos.length; i++) {
-    //         let titleContains = photos[i].title.includes($(this).val());
-    //         let captionContains = photos[i].caption.includes($(this).val());
-    //         if (titleContains || captionContains) {
-    //             displayPhotoByIndex(i, photos);
-    //         }
-    //     }
-    // });
-
     $('#search').on('keyup paste', function() {
+        //get search entry and convert to lower case
+        const searchEntry = $(this).val().toLowerCase();
         //if nothing or only whitespace is in search bar, show all photos
-        if ($.trim($(this).val()) === '') {
-            $("image-container").show();
-        }
-        // otherwise, find and display the photos that have titles or captions that contain search entry
-        for (let i = 0; i < photos.length; i++) {
-            let titleContains = photos[i].title.includes($(this).val());
-            let captionContains = photos[i].caption.includes($(this).val());
-            if (titleContains || captionContains) {
-                $(".image-container").eq(i).show();
-            } else {
-                $(".image-container").eq(i).hide();
+        if ($.trim(searchEntry) === '') {
+            $(".image-container").show();
+        } else {
+            // otherwise, find and display the photos that have titles or captions that contain search entry
+            for (let i = 0; i < photos.length; i++) {
+                let title = photos[i].title.toLowerCase();
+                let caption = photos[i].caption.toLowerCase();
+                if (title.includes(searchEntry) || caption.includes(searchEntry)) {
+                    $(".image-container").eq(i).show();
+                } else {
+                    $(".image-container").eq(i).hide();
+                }
             }
         }
     });    
@@ -76,13 +61,13 @@ $(document).ready(function() {
 
     function displayPhotoByIndex(i, photos) {
         $("#content").append(`
-            <div class="image-container">
+            <a class="image-container chocolat-image" href="${photos[i].url}" title="${photos[i].caption}">
                 <img src="${photos[i].urlThumb}" alt="${photos[i].title} image">
                 <div class="caption-container">
                     <h4>${photos[i].title}</h4>
                     <p>${photos[i].caption}</p>
                 </div>
-            </div>
+            </a>
         `);
     }
     
@@ -103,9 +88,28 @@ $(document).ready(function() {
         $(this).children("img").removeClass("zoom");
     });
 
+    $('#content').Chocolat({
+        imageSize: 'contain'
+    });
 
 
-
+  //on search field input, cycle through image objects to find the image title/caption that contains the input string
+    // $('#search').on('keyup paste', function() {
+    //     //reset content area before displaying matching ones
+    //     resetContent();
+    //     //if nothing or only whitespace is in search bar
+    //     if ($.trim($(this).val()) === '') {
+    //         displayAllPhotos();
+    //     }
+    //     // otherwise, find and display the photos that have titles or captions that contain search entry
+    //     for (let i = 0; i < photos.length; i++) {
+    //         let titleContains = photos[i].title.includes($(this).val());
+    //         let captionContains = photos[i].caption.includes($(this).val());
+    //         if (titleContains || captionContains) {
+    //             displayPhotoByIndex(i, photos);
+    //         }
+    //     }
+    // });
 
 
 

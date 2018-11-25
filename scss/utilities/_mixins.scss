@@ -4,6 +4,11 @@
             @content;
         }
     } 
+    @else if $size == 'md' {
+        @media (min-width: $breakpoint-md) {
+            @content;
+        }
+    }
     @else {
         @error "'#{$size}' is not valid $size argument";
     }

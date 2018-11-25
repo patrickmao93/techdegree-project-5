@@ -1,14 +1,21 @@
+.search-bar {
+    height: 85px;
+}
+
 .search {
     position: fixed;
     width: 100%;
     line-height: 2;
-    transition: 0.4 ease;
+    transition: 0.4s ease;
     font-size: 2em;
+    font-family: $font-primary;
     padding: 10px;
     border: none;
     border-bottom: 1px solid #AAA;
     z-index: 1000;
     background: $color-search;
+    caret-color: #AAA;
+    color: $color-font-primary;
     &:focus {
         outline: none;
         box-shadow: 0 5px 15px rgba($color: #000000, $alpha: 0.3);

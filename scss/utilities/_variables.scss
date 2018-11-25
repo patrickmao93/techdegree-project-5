@@ -1,8 +1,12 @@
 $color-primary: #814CA4;
 $color-secondary: lighten($color-primary, 20%);
 $color-search: #333;
+$color-font-primary: white;
 
-$breakpoint-lg: 480px;
+$font-primary: 'Varela Round', sans-serif;
+$font-header: 'Italianno', cursive;
 
 
 
+$breakpoint-md: 480px;
+$breakpoint-lg: 1000px;

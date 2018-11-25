@@ -1,12 +1,10 @@
-.col {
-    @for $i from 2 through 12 {
-        &-#{$i} {
-            width: 100%;
-            //when media size is lg
-            @include media('lg') {
-                width: 100% / 12 * $i - 2%;
-                @include addGutter();
-            }
-        }
+.content {
+    @include media('md') {
+        @include flex();
+        width: 90%;
+        margin: auto;
+    }
+    @include media('lg') {
+        width: 80%;
     }
 }

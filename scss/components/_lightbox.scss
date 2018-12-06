@@ -1,0 +1,24 @@
+.chocolat-wrapper {
+
+    .chocolat-left,
+    .chocolat-right {
+        display: none;
+
+        &.active {
+            display: none;
+        }
+    }
+
+    .chocolat-overlay {
+        background-color: #000;
+        @include media('md') {
+            background-color: #AAA;
+        }
+    }
+
+    .chocolat-description {
+        @include media('md') {
+            font-size: 3em;
+        }
+    }
+}

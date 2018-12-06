@@ -364,6 +364,7 @@ template {
   position: relative;
   overflow: hidden;
   height: 300px;
+  max-width: 480px;
   display: block;
 }
 @media (min-width: 480px) {
@@ -446,6 +447,20 @@ template {
 .search:focus {
   outline: none;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.chocolat-wrapper .chocolat-overlay {
+  background-color: #000;
+}
+@media (min-width: 480px) {
+  .chocolat-wrapper .chocolat-overlay {
+    background-color: #AAA;
+  }
+}
+@media (min-width: 480px) {
+  .chocolat-wrapper .chocolat-description {
+    font-size: 1.2em;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
